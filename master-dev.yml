@@ -1,47 +1,47 @@
 server:
-    port: 8001
+  port: 8001
 app:
-    auth:
-        jwt:
-            secret: test
-        role:
-            allowed: ROLE_USER
+  auth:
+    jwt:
+      secret: test
+    role:
+      allowed: ROLE_USER
 eureka:
-    client:
-        service-url:
-            defaultZone: http://localhost:8761/eureka
-    instance:
-        prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
 spring:
-    application:
-        name: master
-        version: 1.0.0
-    # Redis
-    cache:
-        type: redis
-    redis:
-        port: 6379
-        host: localhost
-    datasource:
-        driverClassName: org.postgresql.Driver
-        hikari:
-            idle-timeout: 5000
-            max-lifetime: 10000
-            maximum-pool-size: 10
-            minimum-idle: 3
-            schema: school
-        initialization-mode: always
-        password: admin
-        platform: postgres
-        url: jdbc:postgresql://localhost:5432/edustar_master
-        username: admin
-    jpa:
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                format_sql: false
-        show-sql: true
-    output:
-        ansi:
-            enabled: ALWAYS
+  application:
+    name: master
+    version: 1.0.0
+  # Redis
+  cache:
+    type: redis
+  redis:
+    port: 6379
+    host: localhost
+  datasource:
+    driverClassName: org.postgresql.Driver
+    hikari:
+      idle-timeout: 5000
+      max-lifetime: 10000
+      maximum-pool-size: 10
+      minimum-idle: 3
+      schema: school
+    initialization-mode: always
+    password: admin
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/edustar_master
+    username: admin
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
