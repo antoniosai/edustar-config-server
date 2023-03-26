@@ -1,5 +1,5 @@
 server:
-  port: 8005
+  port: 8004
 app:
   auth:
     jwt:
@@ -39,8 +39,11 @@ spring:
     username: admin
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: false
-    show-sql: false
+    show-sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
