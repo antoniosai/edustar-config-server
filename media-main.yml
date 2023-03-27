@@ -1,0 +1,39 @@
+server:
+  port: 8000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+media:
+  storage-path: /home/antoniosai/Code/edustar-app/storage/media
+spring:
+  application:
+    name: media
+    version: 1.0.0
+  redis:
+    port: 6379
+    host: localhost
+  datasource:
+    driverClassName: org.postgresql.Driver
+    hikari:
+      idle-timeout: 5000
+      max-lifetime: 10000
+      maximum-pool-size: 10
+      minimum-idle: 3
+    initialization-mode: always
+    password: admin
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/edustar_media
+    username: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
