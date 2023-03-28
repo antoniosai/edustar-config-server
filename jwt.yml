@@ -1,0 +1,58 @@
+server:
+  #  servlet:
+  #    context-path: /auth
+  port: 7999
+app:
+  auth:
+    apikey:
+      key: apikey
+    token:
+      type: Bearer
+    secret: test
+    ttl: 1800
+    header:
+      key: Authorization
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+spring:
+  application:
+    name: jwt
+    version: 1.0.0
+  datasource:
+    driverClassName: org.postgresql.Driver
+    hikari:
+      idle-timeout: 5000
+      max-lifetime: 10000
+      maximum-pool-size: 10
+      minimum-idle: 3
+    initialization-mode: always
+    password: admin
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/edustar_master
+    username: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
