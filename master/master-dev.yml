@@ -1,5 +1,10 @@
 server:
   port: 8001
+grpc:
+  client:
+    grpc-edustar-media-service:
+      address: static://localhost:9000
+      negotiationType: plaintext
 app:
   auth:
     jwt:
