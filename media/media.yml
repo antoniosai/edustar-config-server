@@ -1,8 +1,8 @@
-server:
-  port: 800
 grpc:
   server:
-    port: 9000
+  port: 8000
+server:
+  port: 8000
 eureka:
   client:
     service-url:
